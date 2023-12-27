@@ -9,6 +9,12 @@ import (
 	"time"
 )
 
+func IsDateValidDateFormat(dateString string) bool {
+	dateFormat := "2006-01-02"
+	_, err := time.Parse(dateFormat, dateString)
+	return err == nil
+}
+
 // "2006-02-01"
 func GetCurrentDateFormat(dateFormat string) string {
 	now := time.Now()
